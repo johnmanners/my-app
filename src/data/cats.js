@@ -1,0 +1,18 @@
+export const CATS = [
+  { slug: "outdoor-activities", name: "Outdoor Activities" },
+  { slug: "historic-buildings", name: "Historic Buildings" },
+  { slug: "museums", name: "Museums" },
+  { slug: "nature-activities", name: "Nature Activities" },
+  { slug: "heritage-centres", name: "Heritage Centres" },
+  { slug: "artistic-activities", name: "Artistic Activities" },
+  { slug: "social-personal", name: "Social & Personal" },
+  { slug: "indoor-activities", name: "Indoor Activities" },
+  { slug: "health-wellbeing", name: "Health & Wellbeing" },
+  { slug: "stem-activities", name: "STEM Activities" },
+  { slug: "work-skills", name: "Work Skills" },
+  { slug: "global-citizenship", name: "Global Citizenship" },
+  { slug: "ice-skating", name: "Ice Skating" },
+  { slug: "entrepreneurship", name: "Entrepreneurship" },
+  { slug: "study-skills", name: "Study Skills" },
+  { slug: "all-activities", name: "All Activities" },
+];
