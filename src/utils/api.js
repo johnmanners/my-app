@@ -1,11 +1,10 @@
-// src/lib/api.js
+// src/utils/api.js
 
-const BASE_URL =
-  process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:8000";
+const BASE_URL = 'https://django.cliste.ie';
 
 // Utility to build final URLs
 function buildUrl(endpoint) {
-  return endpoint.startsWith("http") ? endpoint : `${BASE_URL}${endpoint}`;
+  return `${BASE_URL}${endpoint}`;
 }
 
 // Standard error handler (customize as needed)
@@ -27,11 +26,11 @@ async function handleResponse(res) {
 }
 
 // Send any HTTP request
-export async function apiRequest(endpoint, method = "GET", data, config = {}) {
+export async function apiRequest(endpoint, method = 'GET', data, config = {}) {
   const options = {
     method,
     headers: {
-      "Content-Type": "application/json",
+      'Content-Type': 'application/json',
       // ...optionally add auth tokens or other headers here
       ...(config.headers || {}),
     },
@@ -44,13 +43,19 @@ export async function apiRequest(endpoint, method = "GET", data, config = {}) {
 }
 
 // Convenience POST shortcut
-export const postToAPI = (endpoint, data, config) =>
-  apiRequest(endpoint, "POST", data, config);
+export function postToAPI(endpoint, data, config) {
+  return apiRequest(endpoint, 'POST', data, config);
+}
 
 // Add more shortcuts as needed:
-export const getFromAPI = (endpoint, config) =>
-  apiRequest(endpoint, "GET", undefined, config);
-export const putToAPI = (endpoint, data, config) =>
-  apiRequest(endpoint, "PUT", data, config);
-export const deleteFromAPI = (endpoint, config) =>
-  apiRequest(endpoint, "DELETE", undefined, config);
+export function getFromAPI(endpoint, config) {
+  return apiRequest(endpoint, 'GET', undefined, config);
+}
+
+export function putToAPI(endpoint, data, config) {
+  return apiRequest(endpoint, 'PUT', data, config);
+}
+
+export function deleteFromAPI(endpoint, config) {
+  return apiRequest(endpoint, 'DELETE', undefined, config);
+}
